@@ -1,1 +1,44 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://photographybysylias.com/</loc>
+    </url>
+
+    <url>
+        <loc>https://photographybysylias.com/contact</loc>
+    </url>
+
+    <url>
+        <loc>https://photographybysylias.com/contributions</loc>
+    </url>
+
+    <url>
+        <loc>https://photographybysylias.com/gallery</loc>
+    </url>
+
+    <url>
+        <loc>https://photographybysylias.com/galleries</loc>
+    </url>
+
+    <url>
+        <loc>https://photographybysylias.com/links</loc>
+    </url>
+
+    <url>
+        <loc>https://photographybysylias.com/portfolio</loc>
+    </url>
+
+    <url>
+        <loc>https://photographybysylias.com/policy/cookies</loc>
+    </url>
+
+    <url>
+        <loc>https://photographybysylias.com/policy/privacy</loc>
+    </url>
+
+    <url>
+        <loc>https://photographybysylias.com/policy/terms</loc>
+    </url>
+
+</urlset>
