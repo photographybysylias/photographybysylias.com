@@ -9,10 +9,8 @@
   CONTACT LINKS: Find "EDIT CONTACT LINKS HERE" below.
   RESUME TEXT: Find "EXPERIENCE", "EDUCATION", or another section heading.
 
-  PRINTING: US Letter, portrait, 100% scale; turn browser headers/footers off.
-  The print styles start at "TWO-PAGE PRINT LAYOUT". Education begins page 2.
-  The current text is laid out for two pages; adding substantial text may
-  require adjusting the print spacing. Nothing is cropped or hidden to fit.
+  PDF DOWNLOAD: Find "EDIT RESUME DOWNLOAD LINK HERE" below.
+  Change the href URL to update the PDF that the download button points to.
 -->
 <html lang="en">
 <head>
@@ -85,6 +83,15 @@
       letter-spacing: .065em; font-weight: 700;
     }
     .subtitle { margin: 8px 0 0; font-size: 1.125rem; }
+    .resume-download {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 44px; margin-top: 16px; padding: 8px 16px;
+      border: 1px solid #a6abb0; border-radius: 4px;
+      background: var(--paper); font-family: Arial, Helvetica, sans-serif;
+      font-size: .875rem; font-weight: 600; line-height: 1.4;
+      text-decoration: none;
+    }
+    .resume-download:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
     p { margin: 0 0 10px; }
     p:last-child { margin-bottom: 0; }
     .introduction { margin-bottom: 30px; }
@@ -135,54 +142,6 @@
       .contact-line { gap: 5px 12px; margin-bottom: 23px; }
       .section-title { gap: 12px; font-size: .9375rem; letter-spacing: .065em; }
     }
-    /* TWO-PAGE PRINT LAYOUT
-       Page 1: contact details, introduction, and experience.
-       Page 2: education, certifications, skills, languages, and additional info.
-       No fixed heights or overflow clipping: all text remains printable. */
-    @media print {
-      @page { size: letter portrait; margin: .55in .6in; }
-      html { background: white; }
-      body {
-        background: white; color: #000;
-        font-family: "Times New Roman", Times, serif;
-        font-size: 10.5pt; line-height: 1.2;
-      }
-      .page-wrap { width: 100%; margin: 0; }
-      .portfolio-nav, .skip-link { display: none; }
-      .document { padding: 0; border: 0; box-shadow: none; }
-      .document-header { margin-bottom: 9pt; }
-      .contact-line { gap: 2pt 10pt; font-size: 8.5pt; line-height: 1.2; margin-bottom: 10pt; color: #000; }
-      h1 { font-size: 23pt; line-height: 1.1; letter-spacing: .055em; }
-      .subtitle { margin-top: 4pt; font-size: 11pt; line-height: 1.2; }
-      p { margin: 0 0 4pt; orphans: 2; widows: 2; }
-      .introduction { margin-bottom: 10pt; }
-      .resume-section + .resume-section { margin-top: 12pt; }
-      .section-title {
-        margin: 0 0 8pt; gap: 12pt;
-        font-size: 11pt; line-height: 1.2; letter-spacing: .08em;
-        break-after: avoid; page-break-after: avoid;
-      }
-      .section-title::before, .section-title::after { background: #bbb; }
-      .entry { break-inside: avoid; page-break-inside: avoid; }
-      .entry + .entry { margin-top: 9pt; }
-      .entry-heading, .entry-subheading { flex-direction: row; gap: 3pt 10pt; }
-      .entry-heading h3 { font-size: 10.5pt; line-height: 1.2; }
-      .date { font-size: 10pt; color: #000; }
-      .entry-subheading { margin: 1pt 0 4pt; }
-      .location { font-size: 9.75pt; color: #000; text-align: right; }
-      .entry-copy { margin-top: 3pt; }
-      .entry-copy p + p { margin-top: 4pt; }
-      .entry-copy ul { margin-top: 4pt; padding-left: 12pt; }
-      .entry-copy li + li { margin-top: 3pt; }
-      .compact .entry + .entry { margin-top: 7pt; }
-      .award-meta { font-size: 10pt; color: #000; }
-      a { color: #000; text-decoration: none; }
-      /* The single intentional page break. Do not remove for two-page printing. */
-      .print-page-two {
-        break-before: page; page-break-before: always;
-        margin-top: 0 !important;
-      }
-    }
   </style>
 </head>
 <body>
@@ -219,10 +178,12 @@
           <li>Indiana, US</li>
           <li><a href="mailto:sy@photographybysylias.com">sy@photographybysylias.com</a></li>
           <li><a href="https://www.linkedin.com/in/photographybysylias/">linkedin.com/in/photographybysylias</a></li>
-          <li><a href="tel:+15749527771">+1 (574) 952-7771</a></li>
+          <li><a href="sms:+15749527771">+1 (574) 952-7771</a></li>
         </ul>
         <h1>SYLIAS SHUFELT</h1>
         <p class="subtitle">Sports &amp; Event Photographer</p>
+        <!-- EDIT RESUME DOWNLOAD LINK HERE: change the href to your PDF URL. -->
+        <a class="resume-download" href="https://photographybysylias.com/resume/Resume.pdf" download="Sylias-Shufelt-Resume.pdf">Download Résumé (PDF)</a>
       </header>
 
       <div class="introduction">
@@ -309,8 +270,8 @@
         </article>
       </section>
 
-      <!-- EDUCATION: this section starts the second printed page. -->
-      <section class="resume-section print-page-two" aria-labelledby="education-title">
+      <!-- EDUCATION -->
+      <section class="resume-section" aria-labelledby="education-title">
         <h2 class="section-title" id="education-title">Education</h2>
         <article class="entry">
           <div class="entry-heading">
