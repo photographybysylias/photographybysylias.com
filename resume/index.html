@@ -1,0 +1,411 @@
+<!doctype html>
+<!--
+  QUICK EDIT GUIDE
+  =================
+  PORTFOLIO BUTTONS: Find "EDIT PORTFOLIO LINKS HERE" below.
+  Change only the URL inside each href="...". The three current URLs are
+  placeholders for the gallery pages you will add. Full https:// URLs work too.
+
+  CONTACT LINKS: Find "EDIT CONTACT LINKS HERE" below.
+  RESUME TEXT: Find "EXPERIENCE", "EDUCATION", or another section heading.
+
+  PRINTING: US Letter, portrait, 100% scale; turn browser headers/footers off.
+  The print styles start at "TWO-PAGE PRINT LAYOUT". Education begins page 2.
+  The current text is laid out for two pages; adding substantial text may
+  require adjusting the print spacing. Nothing is cropped or hidden to fit.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sylias Shufelt — Indiana-based sports and event photographer. Experience, education, and photography portfolios.">
+  <meta name="theme-color" content="#f1f2f3">
+  <title>Sylias Shufelt | Résumé &amp; Portfolios</title>
+  <style>
+    /* All styling is here: this page needs no other files or dependencies. */
+    :root {
+      color-scheme: light;
+      --ink: #202020;
+      --muted: #555b62;
+      --line: #d7dadd;
+      --canvas: #f1f2f3;
+      --paper: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-underline-offset: .2em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid #2457a6; outline-offset: 5px; }
+    .skip-link {
+      position: absolute; top: -100px; left: 16px;
+      padding: 10px 16px; background: #fff; z-index: 2;
+    }
+    .skip-link:focus { top: 12px; }
+    .page-wrap { width: min(100% - 40px, 1000px); margin: 32px auto 64px; }
+    .portfolio-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .portfolio-label {
+      margin: 0; font-size: .875rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    .portfolio-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .portfolio-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 44px; padding: 9px 23px; border: 1px solid #a6abb0;
+      border-radius: 4px; background: var(--paper);
+      font-size: .9375rem; font-weight: 600; line-height: 1.4;
+      text-decoration: none;
+    }
+    .portfolio-link:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
+    .document {
+      background: var(--paper); border: 1px solid var(--line);
+      padding: 52px 62px 58px;
+      box-shadow: 0 5px 24px rgb(0 0 0 / 4%);
+    }
+    .document-header { text-align: center; margin-bottom: 28px; }
+    .contact-line {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 5px 16px; margin: 0 0 24px; padding: 0; list-style: none;
+      font-size: .875rem; line-height: 1.6; color: var(--muted);
+    }
+    .contact-line a { overflow-wrap: anywhere; }
+    h1 {
+      margin: 0; font-size: 2.125rem; line-height: 1.2;
+      letter-spacing: .065em; font-weight: 700;
+    }
+    .subtitle { margin: 8px 0 0; font-size: 1.125rem; }
+    p { margin: 0 0 10px; }
+    p:last-child { margin-bottom: 0; }
+    .introduction { margin-bottom: 30px; }
+    .resume-section + .resume-section { margin-top: 32px; }
+    .section-title {
+      display: flex; align-items: center; gap: 18px;
+      margin: 0 0 23px; font-size: 1rem; line-height: 1.4;
+      letter-spacing: .1em; text-transform: uppercase; text-align: center;
+    }
+    .section-title::before, .section-title::after {
+      content: ""; height: 1px; flex: 1; background: var(--line);
+    }
+    .entry + .entry { margin-top: 25px; }
+    .entry-heading, .entry-subheading {
+      display: flex; justify-content: space-between;
+      align-items: baseline; gap: 8px 24px;
+    }
+    .entry-heading h3 {
+      margin: 0; font-size: 1rem; line-height: 1.45;
+      font-weight: 700; text-transform: uppercase;
+    }
+    .date { flex-shrink: 0; font-size: .9375rem; white-space: nowrap; }
+    .entry-subheading { margin: 3px 0 9px; }
+    .organization { margin: 0; font-weight: 600; }
+    .location { margin: 0; color: var(--muted); font-size: .9375rem; text-align: right; }
+    .entry-copy { margin-top: 7px; }
+    .entry-copy p + p { margin-top: 9px; }
+    .entry-copy ul { padding-left: 21px; margin: 9px 0 0; }
+    .entry-copy li + li { margin-top: 7px; }
+    .compact .entry + .entry { margin-top: 18px; }
+    .compact .entry-subheading { margin-bottom: 0; }
+    .award-meta { color: var(--muted); font-size: .9375rem; }
+    @media screen and (max-width: 760px) {
+      .document { padding: 36px 30px 40px; }
+      .entry-heading, .entry-subheading { flex-direction: column; gap: 3px; }
+      .location { text-align: left; }
+      .date { color: var(--muted); }
+      .entry-subheading { margin-top: 6px; }
+    }
+    @media screen and (max-width: 480px) {
+      .page-wrap { width: calc(100% - 24px); margin: 20px auto 28px; }
+      .portfolio-nav { display: block; margin-bottom: 16px; }
+      .portfolio-label { margin-bottom: 10px; }
+      .portfolio-links { display: grid; grid-template-columns: 1fr 1fr 1.35fr; gap: 7px; }
+      .portfolio-link { padding: 10px 8px; font-size: .875rem; }
+      .document { padding: 30px 21px 36px; }
+      h1 { font-size: 1.7rem; letter-spacing: .045em; }
+      .contact-line { gap: 5px 12px; margin-bottom: 23px; }
+      .section-title { gap: 12px; font-size: .9375rem; letter-spacing: .065em; }
+    }
+    /* TWO-PAGE PRINT LAYOUT
+       Page 1: contact details, introduction, and experience.
+       Page 2: education, certifications, skills, languages, and additional info.
+       No fixed heights or overflow clipping: all text remains printable. */
+    @media print {
+      @page { size: letter portrait; margin: .55in .6in; }
+      html { background: white; }
+      body {
+        background: white; color: #000;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 10.5pt; line-height: 1.2;
+      }
+      .page-wrap { width: 100%; margin: 0; }
+      .portfolio-nav, .skip-link { display: none; }
+      .document { padding: 0; border: 0; box-shadow: none; }
+      .document-header { margin-bottom: 9pt; }
+      .contact-line { gap: 2pt 10pt; font-size: 8.5pt; line-height: 1.2; margin-bottom: 10pt; color: #000; }
+      h1 { font-size: 23pt; line-height: 1.1; letter-spacing: .055em; }
+      .subtitle { margin-top: 4pt; font-size: 11pt; line-height: 1.2; }
+      p { margin: 0 0 4pt; orphans: 2; widows: 2; }
+      .introduction { margin-bottom: 10pt; }
+      .resume-section + .resume-section { margin-top: 12pt; }
+      .section-title {
+        margin: 0 0 8pt; gap: 12pt;
+        font-size: 11pt; line-height: 1.2; letter-spacing: .08em;
+        break-after: avoid; page-break-after: avoid;
+      }
+      .section-title::before, .section-title::after { background: #bbb; }
+      .entry { break-inside: avoid; page-break-inside: avoid; }
+      .entry + .entry { margin-top: 9pt; }
+      .entry-heading, .entry-subheading { flex-direction: row; gap: 3pt 10pt; }
+      .entry-heading h3 { font-size: 10.5pt; line-height: 1.2; }
+      .date { font-size: 10pt; color: #000; }
+      .entry-subheading { margin: 1pt 0 4pt; }
+      .location { font-size: 9.75pt; color: #000; text-align: right; }
+      .entry-copy { margin-top: 3pt; }
+      .entry-copy p + p { margin-top: 4pt; }
+      .entry-copy ul { margin-top: 4pt; padding-left: 12pt; }
+      .entry-copy li + li { margin-top: 3pt; }
+      .compact .entry + .entry { margin-top: 7pt; }
+      .award-meta { font-size: 10pt; color: #000; }
+      a { color: #000; text-decoration: none; }
+      /* The single intentional page break. Do not remove for two-page printing. */
+      .print-page-two {
+        break-before: page; page-break-before: always;
+        margin-top: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#resume">Skip to résumé</a>
+  <div class="page-wrap">
+    <!-- ================================================================
+         EDIT PORTFOLIO LINKS HERE
+         Replace each href URL below with your gallery's URL.
+         Keep the quotation marks and the Sports / Events / Studio Work text.
+         ================================================================ -->
+    <nav class="portfolio-nav" aria-labelledby="portfolio-title">
+      <p class="portfolio-label" id="portfolio-title">Portfolios</p>
+      <div class="portfolio-links">
+
+        <!-- SPORTS LINK: edit the href on the next line. -->
+        <a class="portfolio-link" href="/resume/sports/">Sports</a>
+
+        <!-- EVENTS LINK: edit the href on the next line. -->
+        <a class="portfolio-link" href="/resume/events/">Events</a>
+
+        <!-- STUDIO WORK LINK: edit the href on the next line. -->
+        <a class="portfolio-link" href="/resume/studiowork/">Studio Work</a>
+
+      </div>
+    </nav>
+    <!-- END OF EDITABLE PORTFOLIO LINKS -->
+
+    <main class="document" id="resume">
+      <!-- CONTACT DETAILS AND INTRODUCTION: edit the text directly below. -->
+      <header class="document-header">
+        <!-- EDIT CONTACT LINKS HERE: mailto: is for email; tel: is for phone. -->
+        <ul class="contact-line" aria-label="Personal and contact information">
+          <li><time datetime="2009-12-01">Dec 1, 2009</time></li>
+          <li>Indiana, US</li>
+          <li><a href="mailto:sy@photographybysylias.com">sy@photographybysylias.com</a></li>
+          <li><a href="https://www.linkedin.com/in/photographybysylias/">linkedin.com/in/photographybysylias</a></li>
+          <li><a href="tel:+15749527771">+1 (574) 952-7771</a></li>
+        </ul>
+        <h1>SYLIAS SHUFELT</h1>
+        <p class="subtitle">Sports &amp; Event Photographer</p>
+      </header>
+
+      <div class="introduction">
+        <p>Hey, I’m Sylias, an Indiana-based photographer focused on sports and event coverage. At Triton High School, I lead the yearbook committee, helping guide the team and shape the direction of this year’s book. I also serve as a Jr. Board Member at Potawatomi Wildlife Park. Outside of photography, I’m into IT, network infrastructure, and cloud technology, and I enjoy building and improving the systems behind my own projects. When I’m not working, I’m usually listening to rock, metal, or alternative music. After high school, I plan to attend the IU Media School and pursue a B.S. in Sports Media to keep growing on both the creative and technical sides of my work.</p>
+      </div>
+
+      <!-- EXPERIENCE: each article is one role. Copy an article to add a role. -->
+      <section class="resume-section" aria-labelledby="experience-title">
+        <h2 class="section-title" id="experience-title">Experience</h2>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Freelance Photographer</h3>
+            <span class="date">Aug 2026 – Present</span>
+          </div>
+          <div class="entry-subheading">
+            <p class="organization">The Pilot News</p>
+            <p class="location">Plymouth, Indiana, United States</p>
+          </div>
+          <div class="entry-copy">
+            <p>Assignment-based freelance photographer for The Pilot News, primarily covering Triton Jr-Sr High School athletics and events. Capture and edit photography for publication in the newspaper and e-Edition, working independently on assigned stories and events.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Jr. Board Member</h3>
+            <span class="date">Feb 2026 – Present</span>
+          </div>
+          <div class="entry-subheading"><p class="organization">Potawatomi Park Inc.</p></div>
+          <div class="entry-copy">
+            <p>Potawatomi Park — Roles: Jr. Board Member (Feb 2026–Present, On-site); Volunteer Staff (Jul 2025–Jan 2026, Hybrid).</p>
+            <ul>
+              <li>Jr. Board Member: Participated in an advisory capacity to the Board of Directors without legal voting power; provided input and support to ongoing initiatives.</li>
+              <li>Jr. Board Member: Managed Google Ads for Nonprofits account and ran campaigns.</li>
+              <li>Jr. Board Member: Led the process for Google Ad Grant approval, providing up to $120,000 a year in advertising support.</li>
+              <li>Jr. Board Member: Planned and supported marketing efforts tied to events and charitable donations by adjusting targets, keywords, and strategy to improve ad performance.</li>
+              <li>Volunteer Staff: Social Media &amp; Website Management, Events &amp; Marketing, Park Photography, General Park Volunteering (27.5 on-site hours signed by Park Manager).</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Student Brand Ambassador</h3>
+            <span class="date">Sep 2024 – Present</span>
+          </div>
+          <div class="entry-subheading">
+            <p class="organization">Jostens Inc.</p>
+            <p class="location">United States</p>
+          </div>
+          <div class="entry-copy">
+            <p>Created social media content for brand campaigns and school merchandise promotions, working from campaign briefs to produce posts for Mascot Shop products. Selected for class ring and letterman jacket promotional campaigns and responsible for completing contract-based promotional deliverables.</p>
+            <p>Participated in creative focus groups with Jostens corporate staff to provide student and younger-generation perspectives on design, marketing, and brand direction.</p>
+            <p>Contributed feedback and ideas aimed at helping shape a broader brand evolution and rebranding strategy focused on making Jostens more relevant and appealing across generations, particularly to younger audiences.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Sports Social Media Coordinator</h3>
+            <span class="date">Mar 2026 – Nov 2026</span>
+          </div>
+          <div class="entry-subheading">
+            <p class="organization">Get Indiana.</p>
+            <p class="location">Indianapolis, Indiana, United States</p>
+          </div>
+          <div class="entry-copy">
+            <p>Managed and operated the GetIndiana Sports social media account, created graphics and posts covering Indiana sports news, history, and highlights. Researched post topics, and produced graphics within 10-15 minutes of major news breaking. Coordinated content approvals and assisted in maintaining a consistent posting schedule while helping grow audience engagement across the platform. Collaborated with influential Indiana media personalities, including social media creator Nate Spangle and Emmy-nominated sports anchor Dominic Miranda, while producing content that has grabbed the attention of notable figures such as NBA Hall of Famer Reggie Miller.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Photography Lead &amp; Social Media Team</h3>
+            <span class="date">Dec 2023 – May 2025</span>
+          </div>
+          <div class="entry-subheading">
+            <p class="organization">Triton Jr-Sr High School</p>
+            <p class="location">Bourbon, Indiana, United States</p>
+          </div>
+          <div class="entry-copy">
+            <p>Sports Photographer &amp; Social Media Manager for the Triton Athletic Department. Assisted with sports box scores and website management through the school's sports broadcasting network. Assisted with press releases. This was a volunteer-based position as considered by the school, and I cumulated a grand total of 311 on-site volunteer hours during this activity, with much more being spent online.</p>
+          </div>
+        </article>
+      </section>
+
+      <!-- EDUCATION: this section starts the second printed page. -->
+      <section class="resume-section print-page-two" aria-labelledby="education-title">
+        <h2 class="section-title" id="education-title">Education</h2>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>High School Diploma, Core 40 w/ Technical Honors</h3>
+            <span class="date">2015 – 2028</span>
+          </div>
+          <div class="entry-subheading">
+            <p class="organization">Triton Jr-Sr High School</p>
+            <p class="location">Bourbon, Indiana, United States</p>
+          </div>
+          <div class="entry-copy">
+            <p>Recent GPA: 3.7</p>
+            <p>Completed: PLTW Engineering Pathway on Triton Main Campus</p>
+            <p>In Progress: I.T. &amp; Cybersecurity C.T.E. via the North Central C.T.E. cooperative in collaboration with Knox High School and dual credit with Ivy Tech Community College.</p>
+            <p>Activities: Yearbook Committee Leader &amp; Social Media Marketer, Spirit Club, Student Council, Prom Committee, Track &amp; Field Sprinter</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>High School Journalism Institute, Sports Photography</h3>
+            <span class="date">Jul 2026</span>
+          </div>
+          <div class="entry-subheading">
+            <p class="organization">The Media School - Indiana University</p>
+            <p class="location">Indiana, United States</p>
+          </div>
+          <div class="entry-copy">
+            <p>Completed the I.U. Media School's five-day High School Journalism Institute (HSJI) Sports Photography workshop, where I gained hands-on experience in sports photography and photojournalism. Photographed the Indiana Hoosiers wrestling team along with the basketball and football athletic venues. Completed an assignment to develop and refine a professional portfolio of my best fifteen shots. This workshop also included a tour of the Mark Cuban Center for Sports Media and Technology and provided insight into what it's like to live and learn on campus as a college student.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Soon-to-be Graduate</h3>
+            <span class="date">Jul 2026 – May 2027</span>
+          </div>
+          <div class="entry-subheading">
+            <p class="organization">Kosciusko Youth Leadership Academy (KYLA)</p>
+            <p class="location">Warsaw, Indiana, United States</p>
+          </div>
+          <div class="entry-copy">
+            <p>The Kosciusko Youth Leadership Academy develops leadership skills through classroom instruction, hands-on training, and community service.</p>
+            <p>Current community service project involves collaborating with Inspire Indiana to develop a youth substance-use prevention commercial, incorporating personal “My Why” stories to encourage healthy choices and emphasize that it’s never too late to seek help.</p>
+          </div>
+        </article>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section class="resume-section compact" aria-labelledby="certifications-title">
+        <h2 class="section-title" id="certifications-title">Certifications</h2>
+        <article class="entry">
+          <div class="entry-heading"><h3>OSHA 10-Hour Card</h3><span class="date">Aug 2026</span></div>
+          <div class="entry-subheading"><p>U.S. Department of Labor</p></div>
+        </article>
+        <article class="entry">
+          <div class="entry-heading"><h3>Basic Unix/Linux Skills</h3><span class="date">Dec 2025</span></div>
+          <div class="entry-subheading"><p>Indiana University Research Technologies</p></div>
+        </article>
+        <article class="entry">
+          <div class="entry-heading"><h3>SKYWARN Spotter Training</h3><span class="date">Jul 2025</span></div>
+          <div class="entry-subheading"><p>UCAR - The University Corporation for Atmospheric Research</p></div>
+        </article>
+      </section>
+
+      <!-- SKILLS AND LANGUAGES -->
+      <section class="resume-section" aria-labelledby="skills-title">
+        <h2 class="section-title" id="skills-title">Skills</h2>
+        <p>Photography, Graphic Design, Social Media Management, Website Building, Information Technology, Network Infrastructure, Strategic Planning, Teamwork, Leadership, Social Media, Google Workspace, Meta Business Suite, Communication, Attention to Detail, Time Management</p>
+      </section>
+      <section class="resume-section" aria-labelledby="languages-title">
+        <h2 class="section-title" id="languages-title">Languages</h2>
+        <p>English (Native), Spanish (Novice)</p>
+      </section>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <section class="resume-section compact" aria-labelledby="additional-title">
+        <h2 class="section-title" id="additional-title">Additional Information</h2>
+        <article class="entry">
+          <div class="entry-heading"><h3>HSJI Opportunity Scholarship</h3></div>
+          <p>Issued by The Media School @ Indiana University</p>
+          <p class="award-meta">Awarded in Apr 2026.</p>
+        </article>
+        <article class="entry">
+          <div class="entry-heading"><h3>Excellence in Engineering</h3></div>
+          <p>Issued by Triton Sr High School</p>
+          <p class="award-meta">Awarded in Apr 2025.</p>
+        </article>
+        <article class="entry">
+          <div class="entry-heading"><h3>National Press Photographers Association</h3></div>
+          <p>Student Member</p>
+          <p class="award-meta">Aug 2026 - Present</p>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
