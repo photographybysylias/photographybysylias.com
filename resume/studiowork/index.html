@@ -35,7 +35,7 @@
             description: "", // Set to "" to hide this line.
             thumbnailFit: "cover", // "cover" fills boxes; "contain" shows the whole image.
             navigation: [{
-                    label: "RÃ©sumÃ©",
+                    label: "Résumé",
                     url: "/resume/"
                 },
                 {
@@ -793,7 +793,7 @@
         get("heading").textContent = PAGE.heading;
         get("description").textContent = PAGE.description;
         get("description").hidden = !PAGE.description;
-        get("footer").textContent = "Â© " + new Date().getFullYear() + " " + "Photography By Sylias";
+        get("footer").textContent = "© " + new Date().getFullYear() + " " + "Photography By Sylias";
         PAGE.navigation.forEach((item) => {
             const link = document.createElement("a");
             link.href = item.url;
